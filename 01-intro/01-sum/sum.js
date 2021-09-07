@@ -1,7 +1,9 @@
 function sum(a, b) {
-  if (typeof a != 'number' || typeof b != 'number') {
-    throw new TypeError('argument is not a number');
-  }
+  [a, b]
+      .filter((elem) => typeof elem != 'number')
+      .forEach((elem) => {
+        throw new TypeError(`Argument type is a/an ${typeof elem}, should be a number`);
+      });
 
   return a + b;
 }
