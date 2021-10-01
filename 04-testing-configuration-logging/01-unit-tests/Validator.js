@@ -5,8 +5,18 @@ module.exports = class Validator {
 
   validate(obj) {
     const errors = [];
+    if (typeof this.rules === 'undefined') {
+      return errors;
+    }
+
     const ruleFields = Object.keys(this.rules);
 
+    if (typeof obj !== 'object') {
+      errors.push({
+        error: `expect argument type to be object, got ${typeof obj}`,
+      });
+      return errors;
+    }
     for (const field of ruleFields) {
       const toValidateObjectFields = Object.keys(obj);
 
