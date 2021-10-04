@@ -59,7 +59,7 @@ describe('testing-configuration-logging/unit-tests', () => {
       expect(errors[0]).to.have.property('field').and.to.be.equal('age');
       expect(errors[0])
           .to.have.property('error')
-          .and.to.be.equal('too big, expect 18, got 101');
+          .and.to.be.equal('too big, expect 27, got 101');
     });
     it('Validator reports if not number type passed to number field', () => {
       const errors = this.validator.validate({
