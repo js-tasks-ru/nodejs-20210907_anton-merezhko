@@ -1,0 +1,12 @@
+{
+    "name":{
+       "type":"string",
+       "min":10,
+       "max":20
+    },
+    "age":{
+       "type":"number",
+       "min":18,
+       "max":27
+    }
+ }
